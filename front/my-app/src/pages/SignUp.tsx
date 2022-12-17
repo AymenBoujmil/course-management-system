@@ -70,6 +70,11 @@ const SignUp: FC = () => {
 		setProfession(e.target.value);
 	};
 
+    const handleSignin = (e:any) =>{
+        e.preventDefault();
+        navigate("/signin")
+    }
+
 	// const isValidEmail = (email:string) => {
 	//   return /\S+@\S+\.\S+/.test(email);
 	// }
@@ -228,9 +233,9 @@ const SignUp: FC = () => {
 									</Form>
 									<div className='mt-3'>
 										<p className='mb-0  text-center'>
-											Don't have an account?{' '}
-											<a href="{''}" className='text-primary fw-bold'>
-												Sign Up
+											You have an account?{' '}
+											<a href="{''}" onClick={handleSignin} className='text-primary fw-bold'>
+												Sign In
 											</a>
 										</p>
 									</div>
