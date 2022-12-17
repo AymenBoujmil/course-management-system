@@ -3,7 +3,7 @@ import { Container } from 'react-bootstrap';
 import '../assets/styles/teacherList.css';
 import { IUser } from '../utilities/models/IUser';
 import { IUsers } from '../utilities/models/IUsers';
-import Teacher from '../components/Teacher';
+import Teacher from '../components/teacher/Teacher';
 
 const TeacherList: FC<IUsers> = ({ users }: IUsers) => {
 	useEffect(() => {

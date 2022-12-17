@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import banner from '../assets/images/university_banner.jpg';
-import '../assets/styles/banner.css';
+import banner from '../../assets/images/university_banner.jpg';
+import '../../assets/styles/banner.css';
 import { Button, Col, Row } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 

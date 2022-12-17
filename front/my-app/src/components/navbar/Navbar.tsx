@@ -1,7 +1,7 @@
 import React, {FC} from 'react'
 import {Container, Nav, Navbar as NavbarBs} from "react-bootstrap"
 import {NavLink} from "react-router-dom"
-import universityIcon from '../assets/images/university.png'
+import universityIcon from '../../assets/images/university.png'
 
 const Navbar:FC = () => {
   return <>

@@ -1,5 +1,5 @@
 import React,{FC} from 'react'
-import { IUser2 } from '../utilities/models/IUser2'
+import { IUser2 } from '../../utilities/models/IUser2'
 import { Button } from 'react-bootstrap'
 
 const Teacher:FC<IUser2> = ({user}:IUser2) => {

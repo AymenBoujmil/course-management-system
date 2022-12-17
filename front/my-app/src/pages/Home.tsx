@@ -1,7 +1,5 @@
 import React, {FC, useEffect} from 'react'
-import { Banner } from '../components/banner';
-import TeacherList from './TeacherList';
-import { IUser } from '../utilities/models/IUser';
+import { Banner } from '../components/banner/banner';
 import { IUsers } from '../utilities/models/IUsers';
 
 
