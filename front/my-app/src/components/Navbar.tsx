@@ -5,7 +5,7 @@ import universityIcon from '../assets/images/university.png'
 
 const Navbar:FC = () => {
   return <>
-        <NavbarBs className='bg-white shadow-sm '>
+        <NavbarBs className='mb-1 bg-white shadow-sm '>
         <Container>
         <img className='rounded' style={{width: "40px"}} src={universityIcon} alt=''></img>
             <Nav className='justify-content-end'>

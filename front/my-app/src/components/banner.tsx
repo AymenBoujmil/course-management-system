@@ -2,8 +2,11 @@ import React, { FC } from 'react';
 import banner from '../assets/images/university_banner.jpg';
 import '../assets/styles/banner.css';
 import { Button, Col, Row } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 export const Banner: FC = () => {
+	const navigate = useNavigate();
+
 	return (
 		<div id='home'>
 			<section
@@ -25,13 +28,24 @@ export const Banner: FC = () => {
 							</p>
 						</div>
 						<Row>
-							<Col className='p-4 mt-4 d-flex justify-content-center text-center' md='6'>
+							<Col
+								className='p-4 mt-4 d-flex justify-content-center text-center'
+								md='6'>
 								{' '}
-								<Button  variant='danger' size="lg">See Our Courses</Button>{' '}
+								<Button onClick={() => navigate('/courses')} variant='danger' size='lg'>
+									See Our Courses
+								</Button>{' '}
 							</Col>
-							<Col className='p-4 mt-4 d-flex justify-content-center text-center' md='6'>
+							<Col
+								className='p-4 mt-4 d-flex justify-content-center text-center'
+								md='6'>
 								{' '}
-								<Button  variant='danger' size="lg">See Our Teachers</Button>{' '}
+								<Button
+									onClick={() => navigate('/teachers')}
+									variant='danger'
+									size='lg'>
+									See Our Teachers
+								</Button>{' '}
 							</Col>
 						</Row>
 					</div>

@@ -1,0 +1,54 @@
+{
+	"users": [
+		{
+			"firstname": "name 1",
+			"lastname": "first name 1",
+			"nickname": "",
+			"birthday": "7/18/2000",
+			"gender": "male",
+			"email": "email1@gmail.com",
+			"password": "123",
+			"role": "teacher"
+		},
+		{
+			"firstname": "name 2",
+			"lastname": "first name 2",
+			"nickname": "",
+			"birthday": "7/18/2000",
+			"gender": "male",
+			"email": "email2@gmail.com",
+			"password": "123",
+			"role": "teacher"
+		},
+		{
+			"firstname": "name 3",
+			"lastname": "first name 3",
+			"nickname": "",
+			"birthday": "7/18/2000",
+			"gender": "male",
+			"email": "email3@gmail.com",
+			"password": "123",
+			"role": "teacher"
+		},
+		{
+			"firstname": "name 2",
+			"lastname": "first name 2",
+			"nickname": "",
+			"birthday": "7/17/1999",
+			"gender": "female",
+			"email": "email2@gmail.com",
+			"password": "123",
+			"role": "student"
+		}
+	],
+	"jwt": [
+		"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdG5hbWUiOiJuYW1lIDEiLCJsYXN0bmFtZSI6ImZpcnN0IG5hbWUgMSIsIm5pY2tuYW1lIjoiIiwiYmlydGhkYXkiOiI3LzE4LzIwMDAiLCJnZW5kZXIiOiJtYWxlIiwiZW1haWwiOiJlbWFpbDFAZ21haWwuY29tIiwicGFzc3dvcmQiOiIxMjMiLCJyb2xlIjoidGVhY2hlciJ9.TbJgo6liNHqTsIUd_umg6PuAMlfyxUvxx9hxzPDUadU",
+		"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdG5hbWUiOiJuYW1lIDIiLCJsYXN0bmFtZSI6ImZpcnN0IG5hbWUgMiIsIm5pY2tuYW1lIjoiIiwiYmlydGhkYXkiOiI3LzE3LzE5OTkiLCJnZW5kZXIiOiJmZW1hbGUiLCJlbWFpbCI6ImVtYWlsMkBnbWFpbC5jb20iLCJwYXNzd29yZCI6IjEyMyIsInJvbGUiOiJzdHVkZW50In0.i8YVwUVCB8nFfpa7RgJOO1I9q4v7W9Q_cBUJKXzildo"
+	],
+	"courses":[
+		{
+			"name": "Course1",
+			"description": ""
+		}
+	]
+}
