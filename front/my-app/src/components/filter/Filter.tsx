@@ -8,7 +8,7 @@ interface IFilterFunc {
 }
 
 const Filter: FC<IFilterFunc> = ({ handleFilter }: IFilterFunc) => {
-	const [category, setCategory] = useState<string>('None');
+	const [category, setCategory] = useState<string>('All');
 	const [subject, setSubject] = useState<string>('');
 	const [time, setTime] = useState<number>(8);
 

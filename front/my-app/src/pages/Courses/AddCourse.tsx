@@ -4,8 +4,7 @@ import { ICourse } from '../../utilities/models/ICourse';
 import { useNavigate } from 'react-router-dom';
 import api from '../../api/courses';
 import { v4 as uuidv4 } from 'uuid';
-import { ICourses } from '../../utilities/models/ICourses';
-import courses from '../../api/courses';
+
 
 interface ISetCourses {
 	changeCourses: (Course: ICourse) => void;

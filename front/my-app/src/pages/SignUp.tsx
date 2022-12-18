@@ -75,9 +75,7 @@ const SignUp: FC = () => {
         navigate("/signin")
     }
 
-	// const isValidEmail = (email:string) => {
-	//   return /\S+@\S+\.\S+/.test(email);
-	// }
+	
 	return (
 		<Container>
 			<Row className='vh-100 d-flex justify-content-center align-items-center'>

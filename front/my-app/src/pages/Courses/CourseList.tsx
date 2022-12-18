@@ -29,11 +29,18 @@ const CourseList: React.FC<ICourses> = ({ courses }: ICourses) => {
 		setFiltred(courses);
 	}, [courses]);
 	useEffect(() => {
-		console.log(courses);
-		console.log(filtred);
-		console.log('hello');
-		console.log(filter);
-		if (filter.category !== 'All') {
+		
+		if (filter.category === "All" ){
+			setFiltred(
+				courses
+					.filter((course) => {
+						return course.subject.includes(filter.subject);
+					})
+					.filter((course) => {
+						return filter.time < course.startTime;
+					})
+			);		}
+		else if (filter.category !== 'All') {
 			setFiltred(
 				courses
 					.filter((course) => {
@@ -46,17 +53,8 @@ const CourseList: React.FC<ICourses> = ({ courses }: ICourses) => {
 						return filter.time < course.startTime;
 					})
 			);
-		} else {
-			setFiltred(
-				courses
-					.filter((course) => {
-						return course.subject.includes(filter.subject);
-					})
-					.filter((course) => {
-						return filter.time < course.startTime;
-					})
-			);
-		}
+		} 
+		
 	}, [filter]);
 
 	return (
