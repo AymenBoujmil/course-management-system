@@ -141,6 +141,14 @@ npx json-server --watch src/data/db.json --port -3006
 ```
 
 
+## Deployment
+
+As it is a front end project I used Vercel to deploy my application and in order to do that 
+I replaced json server with a simple json file and uploading its data in a table.
+
+https://course-management-system-5yhs.vercel.app
+
+
 
 
 
