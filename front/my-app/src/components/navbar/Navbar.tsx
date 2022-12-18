@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import "../../assets/styles/navbar.css"
 import {
 	Container,
 	Nav,
@@ -7,8 +8,18 @@ import {
 } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import universityIcon from '../../assets/images/university.png';
+import { useNavigate } from 'react-router-dom';
+import { BsPersonFill } from "react-icons/bs";
 
 const Navbar: FC = () => {
+    const navigate = useNavigate();
+    const logOut = ()=>{
+        window.localStorage.removeItem("isLoggedIn")
+        window.localStorage.removeItem("user")
+        window.localStorage.removeItem("role")
+        navigate("/signin")
+
+    }
 	return (
 		<>
 			<NavbarBs className='mb-1 bg-white shadow-sm '>
@@ -28,16 +39,16 @@ const Navbar: FC = () => {
 						<Nav.Link to='/contact' as={NavLink}>
 							Contact
 						</Nav.Link>
-						<NavDropdown title='Dropdown' id='basic-nav-dropdown'>
-							<NavDropdown.Item href='#action/3.1'>Action</NavDropdown.Item>
-							<NavDropdown.Item href='#action/3.2'>
-								Another action
+						<NavDropdown title={<BsPersonFill />} className='navar-dropdown' id='basic-nav-dropdown'>
+							<NavDropdown.Item to='/profile' as={NavLink}>
+								Profile
 							</NavDropdown.Item>
-							<NavDropdown.Item href='#action/3.3'>Something</NavDropdown.Item>
+							<NavDropdown.Item to='/settings' color='red' as={NavLink} href='#action/3.2'>
+								Settings
+							</NavDropdown.Item>
+							
 							<NavDropdown.Divider />
-							<NavDropdown.Item href='#action/3.4'>
-								Separated link
-							</NavDropdown.Item>
+							<NavDropdown.Item onClick={logOut}>Logout </NavDropdown.Item>
 						</NavDropdown>
 					</Nav>
 				</Container>

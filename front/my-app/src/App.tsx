@@ -12,6 +12,9 @@ import AddCourse from './pages/Courses/AddCourse';
 import { ICourse } from './utilities/models/ICourse';
 import Footer from './components/footer/Footer';
 const App: FC = () => {
+
+  const isLoggedIn = window.localStorage.getItem("isLoggedIn")
+
   const [users, setUsers] = useState<any>([])
   const [courses, setCourses] = useState<any>([])
   const retrieveUsers = async() =>{
@@ -44,13 +47,13 @@ const App: FC = () => {
 		<>
 			<Navbar />
 			<Routes>  
-				<Route path='/'  element={<Home users = {users} />} />
+				<Route path='/'  element={isLoggedIn?<Home users = {users} />:<Login users = {users} />} />
 				<Route path='/signin'  element={<Login users = {users} />} />
 				<Route path='/signup' element={<SignUp />} />
-        <Route path='/teachers' element={<TeacherList users = {users} />} />
-        <Route path='/courses' element={<CourseList courses = {courses} />} />
-        <Route path='/newcourse'  element={<AddCourse  changeCourses = {changeCourses} />} />
-        <Route path='/*' element={<NotFound />} />
+        <Route path='/teachers' element={isLoggedIn?<TeacherList users = {users} />:<Login users = {users} />} />
+        <Route path='/courses' element={isLoggedIn?<CourseList courses = {courses} />:<Login users = {users} />} />
+        <Route path='/newcourse'  element={isLoggedIn?<AddCourse  changeCourses = {changeCourses} />:<Login users = {users} />} />
+        <Route path='/*' element={isLoggedIn?<NotFound />:<Login users = {users}  />} />
 
 			</Routes>
       <Footer />
