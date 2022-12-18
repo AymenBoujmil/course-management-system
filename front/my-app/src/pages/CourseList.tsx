@@ -6,9 +6,11 @@ import Filter from '../components/filter/Filter';
 import Course from '../components/course/Course';
 import { ICourse } from '../utilities/models/ICourse';
 import { IFilter } from '../utilities/models/IFilter';
-import { useNavigate } from 'react-router-dom';
-const CourseList: React.FC<ICourses> = ({ courses }: ICourses) => {
 
+import { useNavigate } from 'react-router-dom';
+
+const CourseList: React.FC<ICourses> = ({ courses }: ICourses) => {
+	const [filtred, setFiltred] = useState(courses);
 	const navigate = useNavigate();
 
 	const initialFilter: IFilter = { category: 'All', subject: '', time: 8 };
@@ -17,7 +19,37 @@ const CourseList: React.FC<ICourses> = ({ courses }: ICourses) => {
 		setFilter(filter);
 	};
 	useEffect(() => {
+		setFiltred(courses);
+	}, [courses]);
+	useEffect(() => {
+		console.log(courses);
+		console.log(filtred);
+		console.log('hello');
 		console.log(filter);
+		if (filter.category !== 'All') {
+			setFiltred(
+				courses
+					.filter((course) => {
+						return course.category.localeCompare(filter.category) === 0;
+					})
+					.filter((course) => {
+						return course.subject.includes(filter.subject);
+					})
+					.filter((course) => {
+						return filter.time < course.startTime;
+					})
+			);
+		} else {
+			setFiltred(
+				courses
+					.filter((course) => {
+						return course.subject.includes(filter.subject);
+					})
+					.filter((course) => {
+						return filter.time < course.startTime;
+					})
+			);
+		}
 	}, [filter]);
 
 	return (
@@ -39,11 +71,16 @@ const CourseList: React.FC<ICourses> = ({ courses }: ICourses) => {
 					</Col>
 					<Col md='9'>
 						<ul className='list-group list-group-light mb-3'>
-							{courses.map((course: ICourse) => (
+							{filtred.map((course: ICourse) => (
 								<Course course={course} />
 							))}
 						</ul>
-						<Button onClick={()=>{navigate("/newcourse")}} className='float-end' variant='danger'>
+						<Button
+							onClick={() => {
+								navigate('/newcourse');
+							}}
+							className='float-end'
+							variant='danger'>
 							Add Course
 						</Button>
 					</Col>

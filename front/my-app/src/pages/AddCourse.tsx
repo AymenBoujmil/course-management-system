@@ -1,16 +1,52 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import { ICourse } from '../utilities/models/ICourse';
+import { useNavigate } from 'react-router-dom';
+import api from '../api/courses'
+import { v4 as uuidv4 } from 'uuid';
+import { ICourses } from '../utilities/models/ICourses';
+import courses from '../api/courses';
 
-const AddCourse: React.FC = () => {
-    const initialCourse = { name: '',
-        description: '',
-        category: '',
-        subject: '',
-        startTime: '8AM',
-        endTime: '8AM',
-        numberOfStudents: 0}
-    const [course, setCourse] = useState<ICourse>(initialCourse)
+interface ISetCourses{
+    changeCourses: (Course: ICourse) => void
+}
+
+const AddCourse: React.FC<ISetCourses> = ({ changeCourses }: ISetCourses) => {
+	const navigate = useNavigate();
+	const initialCourse = {
+		name: '',
+		description: '',
+		category: 'Maths',
+		subject: '',
+		startTime: 8,
+		endTime: 8,
+		numberOfStudents: 0,
+	};
+	const [course, setCourse] = useState<ICourse>(initialCourse);
+	const handleChange = (e: any) => {
+		const { name, value } = e.target;
+		if (name === 'endTime' || name === 'startTime') {
+			const valueStartEnd = parseInt(value[0] + value[1]);
+			setCourse({ ...course, [name]: valueStartEnd });
+		}
+		else if (name === 'numberOfStudents') {
+			const valueNbOfStudents = parseInt(value);
+			setCourse({ ...course, [name]: valueNbOfStudents });
+		} else {
+			setCourse({ ...course, [name]: value });
+		}
+	};
+
+	const handleSubmit = async(event: any) => {
+		event.preventDefault();
+        const request = {
+            id : uuidv4(),
+            ...course,
+        };
+        const response = await api.post("/courses",request);
+        changeCourses(response.data)
+		navigate('/courses');
+	}
 
 	return (
 		<>
@@ -19,11 +55,15 @@ const AddCourse: React.FC = () => {
 				<div className='container'>
 					<p>Please fill this form to add a new course.</p>
 
-					<Form>
+					<Form onSubmit={handleSubmit}>
 						<Form.Group className='mb-3' controlId='exampleForm.ControlInput1'>
 							<Form.Label>Name</Form.Label>
 							<Form.Control
+								value={course.name}
+								onChange={handleChange}
 								type='text'
+								name='name'
+								required
 								placeholder='Please enter course name'
 							/>
 						</Form.Group>
@@ -31,18 +71,29 @@ const AddCourse: React.FC = () => {
 							className='mb-3'
 							controlId='exampleForm.ControlTextarea1'>
 							<Form.Label>description</Form.Label>
-							<Form.Control as='textarea' rows={3} />
+							<Form.Control
+								value={course.description}
+								onChange={handleChange}
+								name='description'
+								as='textarea'
+								rows={3}
+								required
+							/>
 						</Form.Group>
 						<Form.Group className='mb-3' controlId='exampleForm.ControlInput1'>
 							<Form.Label>Category</Form.Label>
-							<Form.Select>
+							<Form.Select name='category' onChange={handleChange}>
 								<option>Maths</option>
-								<option>Pysics</option>
+								<option>Physics</option>
 							</Form.Select>
 						</Form.Group>
 						<Form.Group className='mb-3' controlId='exampleForm.ControlInput1'>
 							<Form.Label>Subject</Form.Label>
 							<Form.Control
+								onChange={handleChange}
+								value={course.subject}
+								name='subject'
+								required
 								type='text'
 								placeholder='Please enter course subject'
 							/>
@@ -55,6 +106,9 @@ const AddCourse: React.FC = () => {
 									controlId='exampleForm.ControlInput1'>
 									<Form.Label>Start time</Form.Label>
 									<Form.Control
+										required
+										onChange={handleChange}
+										name='startTime'
 										type='time'
 										className='text-center'
 										aria-label='Small'
@@ -69,7 +123,10 @@ const AddCourse: React.FC = () => {
 									controlId='exampleForm.ControlInput1'>
 									<Form.Label>End time</Form.Label>
 									<Form.Control
+										required
+										onChange={handleChange}
 										type='time'
+										name='endTime'
 										className=' text-center'
 										aria-label='Small'
 										aria-describedby='inputGroup-sizing-sm'
@@ -80,6 +137,10 @@ const AddCourse: React.FC = () => {
 						<Form.Group className='mb-3' controlId='exampleForm.ControlInput1'>
 							<Form.Label>Number Of students</Form.Label>
 							<Form.Control
+								value={course.numberOfStudents}
+								required
+								onChange={handleChange}
+								name='numberOfStudents'
 								type='number'
 								placeholder='Please enter number of students'
 							/>

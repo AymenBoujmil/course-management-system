@@ -3,7 +3,7 @@ export interface ICourse {
     description: string,
     category: string,
     subject: string,
-    startTime: string,
-    endTime: string,
+    startTime: number,
+    endTime: number,
     numberOfStudents: number
 }

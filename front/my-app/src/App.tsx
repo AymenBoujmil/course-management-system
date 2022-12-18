@@ -9,6 +9,7 @@ import TeacherList from './pages/TeacherList';
 import CourseList from './pages/CourseList';
 import NotFound from './pages/NotFound';
 import AddCourse from './pages/AddCourse';
+import { ICourse } from './utilities/models/ICourse';
 const App: FC = () => {
   const [users, setUsers] = useState<any>([])
   const [courses, setCourses] = useState<any>([])
@@ -33,6 +34,10 @@ const App: FC = () => {
     getAllUsers();
     getAllCourses();
   }, [])
+  const changeCourses = (course:ICourse) => {
+    setCourses([...courses, course ])
+  }
+ 
   
 	return (
 		<>
@@ -43,7 +48,7 @@ const App: FC = () => {
 				<Route path='/signup' element={<SignUp />} />
         <Route path='/teachers' element={<TeacherList users = {users} />} />
         <Route path='/courses' element={<CourseList courses = {courses} />} />
-        <Route path='/newcourse'  element={<AddCourse />} />
+        <Route path='/newcourse'  element={<AddCourse  changeCourses = {changeCourses} />} />
         <Route path='/*' element={<NotFound />} />
 
 			</Routes>
