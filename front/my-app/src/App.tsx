@@ -7,6 +7,8 @@ import SignUp from './pages/SignUp';
 import api from "./api/users"
 import TeacherList from './pages/TeacherList';
 import CourseList from './pages/CourseList';
+import NotFound from './pages/NotFound';
+import AddCourse from './pages/AddCourse';
 const App: FC = () => {
   const [users, setUsers] = useState<any>([])
   const [courses, setCourses] = useState<any>([])
@@ -36,11 +38,13 @@ const App: FC = () => {
 		<>
 			<Navbar />
 			<Routes>  
-				<Route path='/' element={<Home users = {users} />} />
-				<Route path='/signin' element={<Login />}></Route>
+				<Route path='/'  element={<Home users = {users} />} />
+				<Route path='/signin'  element={<Login />} />
 				<Route path='/signup' element={<SignUp />} />
         <Route path='/teachers' element={<TeacherList users = {users} />} />
         <Route path='/courses' element={<CourseList courses = {courses} />} />
+        <Route path='/newcourse'  element={<AddCourse />} />
+        <Route path='/*' element={<NotFound />} />
 
 			</Routes>
 		</>

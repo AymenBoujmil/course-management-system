@@ -6,6 +6,7 @@ import { IUsers } from '../utilities/models/IUsers';
 import Teacher from '../components/teacher/Teacher';
 
 const TeacherList: FC<IUsers> = ({ users }: IUsers) => {
+
 	useEffect(() => {
 		console.log(users);
 		console.log(users.filter((user: IUser) => user.role === 'teacher'));
