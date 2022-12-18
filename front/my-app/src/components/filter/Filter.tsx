@@ -115,10 +115,7 @@ const Filter: FC<IFilterFunc> = ({ handleFilter }: IFilterFunc) => {
 						{' '}
 						Filter{' '}
 					</Button>
-					{/* <Button  onClick={handleReset} className='float-center m-1' variant='outline-danger'>
-						{' '}
-						Reset{' '}
-					</Button> */}
+					
 				</div>
 			</div>
 		</>

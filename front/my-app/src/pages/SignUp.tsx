@@ -226,7 +226,8 @@ const SignUp: FC = () => {
 											</Col>
 										</Row>
 										<div className='d-grid'>
-											<Button variant='primary' type='submit'>
+											<Button variant='danger'
+											 type='submit'>
 												Login
 											</Button>
 										</div>

@@ -6,8 +6,11 @@ import Filter from '../components/filter/Filter';
 import Course from '../components/course/Course';
 import { ICourse } from '../utilities/models/ICourse';
 import { IFilter } from '../utilities/models/IFilter';
-import jsonwebtoken from 'jsonwebtoken';
+import { useNavigate } from 'react-router-dom';
 const CourseList: React.FC<ICourses> = ({ courses }: ICourses) => {
+
+	const navigate = useNavigate();
+
 	const initialFilter: IFilter = { category: 'All', subject: '', time: 8 };
 	const [filter, setFilter] = useState<IFilter>(initialFilter);
 	const handleFilter = (filter: IFilter) => {
@@ -40,7 +43,7 @@ const CourseList: React.FC<ICourses> = ({ courses }: ICourses) => {
 								<Course course={course} />
 							))}
 						</ul>
-						<Button className='float-end' variant='danger'>
+						<Button onClick={()=>{navigate("/newcourse")}} className='float-end' variant='danger'>
 							Add Course
 						</Button>
 					</Col>
