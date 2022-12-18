@@ -12,10 +12,6 @@ const Home:FC<IUsers>= ({users}:IUsers) => {
     
     <Banner />
 
-     {/* {users.map((user) => (
-      <p>{user.firstname}</p>
-    ))}
-     */}
     </>
   )
 }

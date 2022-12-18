@@ -45,7 +45,7 @@ const App: FC = () => {
 			<Navbar />
 			<Routes>  
 				<Route path='/'  element={<Home users = {users} />} />
-				<Route path='/signin'  element={<Login />} />
+				<Route path='/signin'  element={<Login users = {users} />} />
 				<Route path='/signup' element={<SignUp />} />
         <Route path='/teachers' element={<TeacherList users = {users} />} />
         <Route path='/courses' element={<CourseList courses = {courses} />} />

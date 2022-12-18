@@ -1,14 +1,25 @@
 import React, { FC, useState } from 'react';
-import { Col, Button, Row, Container, Card, Form } from 'react-bootstrap';
+import { Col, Button, Row, Container, Card, Form, Alert } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import { IUsers } from '../utilities/models/IUsers';
 
 
-const Login: FC = () => {
+const Login: FC<IUsers> = ({users}:IUsers) => {
 	const navigate = useNavigate();
+	const [error, setError] = useState(false)
 	function handleSubmit(event: any) {
 		event.preventDefault();
-		navigate('/');
-	}
+		const exist = users.filter((user) =>{ return user.email.localeCompare(email) === 0})
+		console.log(exist.length)
+		if (exist.length > 0){
+			if ( exist[0].password === pwd ){
+				window.localStorage.setItem("user",JSON.stringify(exist[0]))
+				window.localStorage.setItem("role",exist[0].role)
+				navigate('/')
+			}
+		}
+		setError(true);
+		}
 	const [email, setEmail] = useState<string>('');
 	const [pwd, setPwd] = useState<string>('');
 	const changeEmail = (event: any) => {
@@ -22,11 +33,14 @@ const Login: FC = () => {
     e.preventDefault();
     navigate("/signup")
 }
-	// const isValidEmail = (email:string) => {
-	//   return /\S+@\S+\.\S+/.test(email);
-	// }
+	
 	return (
 		<Container>
+			{error ? (
+					<Alert key='danger' variant='danger'>
+						Please Verify your data
+					</Alert>
+				) : null}
 			<Row className='vh-100 d-flex justify-content-center align-items-center'>
 				<Col md={10} lg={8} xs={12}>
 					{/* <div className="border border-3 border-primary"></div> */}
