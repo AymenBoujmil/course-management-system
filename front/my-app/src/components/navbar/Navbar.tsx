@@ -13,11 +13,14 @@ import { BsPersonFill } from "react-icons/bs";
 
 const Navbar: FC = () => {
     const navigate = useNavigate();
+    const isLoggedIn = window.localStorage.getItem("isLoggedIn")
+
     const logOut = ()=>{
         window.localStorage.removeItem("isLoggedIn")
         window.localStorage.removeItem("user")
         window.localStorage.removeItem("role")
         navigate("/signin")
+        
 
     }
 	return (
@@ -39,7 +42,7 @@ const Navbar: FC = () => {
 						<Nav.Link to='/contact' as={NavLink}>
 							Contact
 						</Nav.Link>
-						<NavDropdown title={<BsPersonFill />} className='navar-dropdown' id='basic-nav-dropdown'>
+                        {isLoggedIn?<NavDropdown title={<BsPersonFill />} className='navar-dropdown' id='basic-nav-dropdown'>
 							<NavDropdown.Item to='/profile' as={NavLink}>
 								Profile
 							</NavDropdown.Item>
@@ -49,7 +52,8 @@ const Navbar: FC = () => {
 							
 							<NavDropdown.Divider />
 							<NavDropdown.Item onClick={logOut}>Logout </NavDropdown.Item>
-						</NavDropdown>
+						</NavDropdown> :null}
+						
 					</Nav>
 				</Container>
 			</NavbarBs>
