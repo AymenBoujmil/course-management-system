@@ -11,33 +11,44 @@ import NotFound from './pages/NotFound';
 import AddCourse from './pages/Courses/AddCourse';
 import { ICourse } from './utilities/models/ICourse';
 import Footer from './components/footer/Footer';
+import data from './data/db.json'
 const App: FC = () => {
 
   const isLoggedIn = window.localStorage.getItem("isLoggedIn")
 
-  const [users, setUsers] = useState<any>([])
-  const [courses, setCourses] = useState<any>([])
-  const retrieveUsers = async() =>{
-    const response = await api.get('/users')
-    return response
-  }
-  const retrieveCourses = async() =>{
-    const response = await api.get('/courses')
-    return response
-  }
-  useEffect(() => {
-    const getAllCourses =async () => {
-      const allCourses = await retrieveCourses()
-      if (allCourses.data) setCourses(allCourses.data)
+  const [users, setUsers] = useState<any>(data.users)
+  const [courses, setCourses] = useState<any>(data.courses)
 
-    };
-    const getAllUsers = async()=>{
-      const allUsers = await retrieveUsers()
-      if (allUsers.data) setUsers(allUsers.data)
-    };
-    getAllUsers();
-    getAllCourses();
-  }, [])
+
+  /** I Used this code to be able to get data from json server*/
+
+  // const retrieveUsers = async() =>{
+  //   const response = await api.get('/users')
+  //   return response
+  // }
+  // const retrieveCourses = async() =>{
+  //   const response = await api.get('/courses')
+  //   return response
+  // }
+  // useEffect(() => {
+  //   const getAllCourses =async () => {
+  //     const allCourses = await retrieveCourses()
+  //     if (allCourses.data) setCourses(allCourses.data)
+
+  //   };
+  //   const getAllUsers = async()=>{
+  //     const allUsers = await retrieveUsers()
+  //     if (allUsers.data) setUsers(allUsers.data)
+  //   };
+  //   getAllUsers();
+  //   getAllCourses();
+  // }, [])
+  useEffect(() => {
+    
+  console.log(courses);
+    
+  }, [courses])
+  
   const changeCourses = (course:ICourse) => {
     setCourses([...courses, course ])
   }

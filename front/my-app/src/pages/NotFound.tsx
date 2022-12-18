@@ -3,13 +3,13 @@ import { Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
 const NotFound: React.FC = () => {
-  const isLoggedIn = window.localStorage.getItem("isLoggedIn")
+  //const isLoggedIn = window.localStorage.getItem("isLoggedIn")
   const navigate = useNavigate()
-  useEffect(() => {
-    if (isLoggedIn !== "true"){
-      navigate('/signin')
-    }
-  }, [])
+//   useEffect(() => {
+//     if (isLoggedIn !== "true"){
+//       navigate('/signin')
+//     }
+//   }, [])
 
 	const handleClick = () => {
 		navigate('/');

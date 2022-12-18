@@ -11,13 +11,13 @@ interface ISetCourses {
 }
 
 const AddCourse: React.FC<ISetCourses> = ({ changeCourses }: ISetCourses) => {
-	const isLoggedIn = window.localStorage.getItem('isLoggedIn');
+	// const isLoggedIn = window.localStorage.getItem('isLoggedIn');
 	const roleUser = window.localStorage.getItem('role');
 	const navigate = useNavigate();
 	useEffect(() => {
-		if (isLoggedIn !== 'true') {
-			navigate('/signin');
-		}
+		// if (isLoggedIn !== 'true') {
+		// 	navigate('/signin');
+		// }
 		if (roleUser !== 'teacher') {
 			navigate('/courses');
 		}
@@ -47,13 +47,17 @@ const AddCourse: React.FC<ISetCourses> = ({ changeCourses }: ISetCourses) => {
 
 	const handleSubmit = async (event: any) => {
 		event.preventDefault();
-		const request = {
-			id: uuidv4(),
-			...course,
-		};
-		const response = await api.post('/courses', request);
-		changeCourses(response.data);
+		changeCourses(course)
 		navigate('/courses');
+
+		// this is for json server use
+		// const request = {
+		// 	id: uuidv4(),
+		// 	...course,
+		// };
+		// const response = await api.post('/courses', request);
+		// changeCourses(response.data);
+		// navigate('/courses');
 	};
 
 	return (

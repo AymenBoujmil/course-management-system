@@ -74,16 +74,6 @@
       "numberOfStudents": 6
     },
     {
-      "id": "70e2695d-a4f8-4d45-a614-729a2020860a",
-      "name": "sfsf",
-      "description": "dqfqdf",
-      "category": "Maths",
-      "subject": "dfdf",
-      "startTime": 17,
-      "endTime": 19,
-      "numberOfStudents": 3
-    },
-    {
       "id": "8a936d04-cbd7-4038-8df7-39304febc69b",
       "name": "Analyse",
       "description": "analyse suite numerique",
@@ -94,24 +84,14 @@
       "numberOfStudents": 7
     },
     {
-      "id": "ab4533fe-1432-470e-95fd-e81c28553c11",
-      "name": "aaa",
-      "description": "aaaa",
-      "category": "Maths",
-      "subject": "azeaz",
-      "startTime": 1,
-      "endTime": 3,
-      "numberOfStudents": 5
-    },
-    {
-      "id": "79d4ad57-f337-431c-9dca-062424c228c9",
-      "name": "aaa",
-      "description": "arazr",
-      "category": "Maths",
-      "subject": "1234",
-      "startTime": 23,
-      "endTime": 3,
-      "numberOfStudents": 3
+      "id": "1717d3fb-259f-48b8-a899-58370bf61b2e",
+      "name": "new course",
+      "description": "this is a new course",
+      "category": "Physics",
+      "subject": "new course",
+      "startTime": 9,
+      "endTime": 12,
+      "numberOfStudents": 15
     }
   ]
 }

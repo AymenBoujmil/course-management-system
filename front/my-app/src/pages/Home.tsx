@@ -5,13 +5,13 @@ import { useNavigate } from 'react-router-dom';
 
 
 const Home:FC<IUsers>= ({users}:IUsers) => {
-  const isLoggedIn = window.localStorage.getItem("isLoggedIn")
+  // const isLoggedIn = window.localStorage.getItem("isLoggedIn")
   const navigate = useNavigate()
-  useEffect(() => {
-    if (isLoggedIn !== "true"){
-      navigate('/signin')
-    }
-  }, [])
+  // useEffect(() => {
+  //   if (isLoggedIn !== "true"){
+  //     navigate('/signin')
+  //   }
+  // }, [])
   
   return ( <>
     
