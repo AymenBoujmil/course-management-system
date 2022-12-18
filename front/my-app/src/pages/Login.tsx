@@ -2,6 +2,7 @@ import React, { FC, useState } from 'react';
 import { Col, Button, Row, Container, Card, Form, Alert } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { IUsers } from '../utilities/models/IUsers';
+import image from '../assets/images/img1.webp'
 
 
 const Login: FC<IUsers> = ({users}:IUsers) => {
@@ -86,13 +87,13 @@ const Login: FC<IUsers> = ({users}:IUsers) => {
 													className='mb-3'
 													controlId='formBasicCheckbox'>
 													<p className='small'>
-														<a className='text-primary' href='#!'>
+														<a className='text-danger' href="{''}">
 															Forgot password?
 														</a>
 													</p>
 												</Form.Group>
 												<div className='d-grid'>
-													<Button variant='primary' type='submit'>
+													<Button variant='danger' type='submit'>
 														Login
 													</Button>
 												</div>
@@ -100,7 +101,7 @@ const Login: FC<IUsers> = ({users}:IUsers) => {
 											<div className='mt-3'>
 												<p className='mb-0  text-center'>
 													Don't have an account?{' '}
-													<a href="{''}" onClick={handleSignup} className='text-primary fw-bold'>
+													<a href="{''}" onClick={handleSignup} className='text-danger fw-bold'>
 														Sign Up
 													</a>
 												</p>
@@ -110,7 +111,7 @@ const Login: FC<IUsers> = ({users}:IUsers) => {
 								</Col>
 								<Col md={6} xs={12}>
 									<img
-										src='https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img1.webp'
+										src={image}
 										alt='login form'
 										className='rounded-start w-100'
 									/>

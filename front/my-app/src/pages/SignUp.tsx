@@ -233,7 +233,7 @@ const SignUp: FC = () => {
 									<div className='mt-3'>
 										<p className='mb-0  text-center'>
 											You have an account?{' '}
-											<a href="{''}" onClick={handleSignin} className='text-primary fw-bold'>
+											<a href="{''}" onClick={handleSignin} className='text-danger fw-bold'>
 												Sign In
 											</a>
 										</p>
