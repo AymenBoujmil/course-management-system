@@ -13,6 +13,13 @@ const CourseList: React.FC<ICourses> = ({ courses }: ICourses) => {
 	const [filtred, setFiltred] = useState(courses);
 	const navigate = useNavigate();
 
+	const isLoggedIn = window.localStorage.getItem('isLoggedIn');
+	const roleUser = window.localStorage.getItem('role');
+	useEffect(() => {
+		if (isLoggedIn !== 'true') {
+			navigate('/signin');
+		}
+	}, []);
 	const initialFilter: IFilter = { category: 'All', subject: '', time: 8 };
 	const [filter, setFilter] = useState<IFilter>(initialFilter);
 	const handleFilter = (filter: IFilter) => {
@@ -75,14 +82,16 @@ const CourseList: React.FC<ICourses> = ({ courses }: ICourses) => {
 								<Course course={course} />
 							))}
 						</ul>
-						<Button
-							onClick={() => {
-								navigate('/newcourse');
-							}}
-							className='float-end'
-							variant='danger'>
-							Add Course
-						</Button>
+						{roleUser === 'teacher' ? (
+							<Button
+								onClick={() => {
+									navigate('/newcourse');
+								}}
+								className='float-end'
+								variant='danger'>
+								Add Course
+							</Button>
+						) : null}
 					</Col>
 				</Row>
 			</Container>

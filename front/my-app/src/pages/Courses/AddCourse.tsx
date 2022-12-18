@@ -1,18 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import { ICourse } from '../../utilities/models/ICourse';
 import { useNavigate } from 'react-router-dom';
-import api from '../../api/courses'
+import api from '../../api/courses';
 import { v4 as uuidv4 } from 'uuid';
 import { ICourses } from '../../utilities/models/ICourses';
 import courses from '../../api/courses';
 
-interface ISetCourses{
-    changeCourses: (Course: ICourse) => void
+interface ISetCourses {
+	changeCourses: (Course: ICourse) => void;
 }
 
 const AddCourse: React.FC<ISetCourses> = ({ changeCourses }: ISetCourses) => {
+	const isLoggedIn = window.localStorage.getItem('isLoggedIn');
+	const roleUser = window.localStorage.getItem('role');
 	const navigate = useNavigate();
+	useEffect(() => {
+		if (isLoggedIn !== 'true') {
+			navigate('/signin');
+		}
+		if (roleUser !== 'teacher') {
+			navigate('/courses');
+		}
+	}, []);
 	const initialCourse = {
 		name: '',
 		description: '',
@@ -28,8 +38,7 @@ const AddCourse: React.FC<ISetCourses> = ({ changeCourses }: ISetCourses) => {
 		if (name === 'endTime' || name === 'startTime') {
 			const valueStartEnd = parseInt(value[0] + value[1]);
 			setCourse({ ...course, [name]: valueStartEnd });
-		}
-		else if (name === 'numberOfStudents') {
+		} else if (name === 'numberOfStudents') {
 			const valueNbOfStudents = parseInt(value);
 			setCourse({ ...course, [name]: valueNbOfStudents });
 		} else {
@@ -37,16 +46,16 @@ const AddCourse: React.FC<ISetCourses> = ({ changeCourses }: ISetCourses) => {
 		}
 	};
 
-	const handleSubmit = async(event: any) => {
+	const handleSubmit = async (event: any) => {
 		event.preventDefault();
-        const request = {
-            id : uuidv4(),
-            ...course,
-        };
-        const response = await api.post("/courses",request);
-        changeCourses(response.data)
+		const request = {
+			id: uuidv4(),
+			...course,
+		};
+		const response = await api.post('/courses', request);
+		changeCourses(response.data);
 		navigate('/courses');
-	}
+	};
 
 	return (
 		<>

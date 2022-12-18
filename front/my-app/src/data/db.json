@@ -31,12 +31,12 @@
 			"role": "teacher"
 		},
 		{
-			"firstname": "name 2",
-			"lastname": "first name 2",
+			"firstname": "name 4",
+			"lastname": "first name 4",
 			"nickname": "",
 			"birthday": "7/17/1999",
 			"gender": "female",
-			"email": "email2@gmail.com",
+			"email": "email4@gmail.com",
 			"password": "123",
 			"role": "student"
 		}

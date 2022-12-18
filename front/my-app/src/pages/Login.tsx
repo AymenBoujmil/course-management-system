@@ -15,6 +15,8 @@ const Login: FC<IUsers> = ({users}:IUsers) => {
 			if ( exist[0].password === pwd ){
 				window.localStorage.setItem("user",JSON.stringify(exist[0]))
 				window.localStorage.setItem("role",exist[0].role)
+				window.localStorage.setItem("isLoggedIn","true")
+
 				navigate('/')
 			}
 		}
