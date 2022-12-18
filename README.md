@@ -58,3 +58,14 @@ Universally Unique Identifier (UUID) is very useful. In Node. js there are many 
 ```batch
 npm i uuid
 ```
+## Starting
+So first of all I started with designing the Use Case Diagram to this project.
+
+![usecase](https://user-images.githubusercontent.com/56639521/208318518-062a88a5-1c80-4a00-b905-e63d3d53f4dc.png)
+
+Then I decided for each functionality what are the necessary pages.
+
+So the User have to be logged in our system.
+By fullfilling the login page
+
+
