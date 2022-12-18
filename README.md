@@ -65,15 +65,24 @@ So I prefererd this structure in our project:
 
 - First we have the api folder that contain services that help us to connect to the json server api.
 - We have assets folder that contains styles or images.
-![image](https://user-images.githubusercontent.com/56639521/208322234-9a356731-9730-4eaf-978e-95464a5db681.png) 
+
+![image](https://user-images.githubusercontent.com/56639521/208322234-9a356731-9730-4eaf-978e-95464a5db681.png)
+
 - We have also components folder that contains components that we will use in our project.
+ 
  ![image](https://user-images.githubusercontent.com/56639521/208322276-c42046fe-b73b-420b-ad3e-5f510ae0fc5f.png)
+ 
 - We have data folder that contains json files.
+
 ![image](https://user-images.githubusercontent.com/56639521/208322309-0d43260e-f098-4782-a20b-c7b3636f8f7b.png)
+
 - we have also hooks folder in which we put custom hooks if needed.
 - We have a pages folder that contains the pages of our project.
+
 ![image](https://user-images.githubusercontent.com/56639521/208322393-845901dc-9b2f-477f-bbb5-445be96e7bd5.png)
+
 - And finally we have utils  folder in which I put the interfaces that we will need in our project.
+
 ![image](https://user-images.githubusercontent.com/56639521/208322432-eaa029f2-b3a4-41fc-b7d7-f80b992f5a2d.png)
 
 
