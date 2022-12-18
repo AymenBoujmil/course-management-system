@@ -6,10 +6,11 @@ import Login from './pages/Login';
 import SignUp from './pages/SignUp';
 import api from "./api/users"
 import TeacherList from './pages/TeacherList';
-import CourseList from './pages/CourseList';
+import CourseList from './pages//Courses/CourseList';
 import NotFound from './pages/NotFound';
-import AddCourse from './pages/AddCourse';
+import AddCourse from './pages/Courses/AddCourse';
 import { ICourse } from './utilities/models/ICourse';
+import Footer from './components/footer/Footer';
 const App: FC = () => {
   const [users, setUsers] = useState<any>([])
   const [courses, setCourses] = useState<any>([])
@@ -52,6 +53,7 @@ const App: FC = () => {
         <Route path='/*' element={<NotFound />} />
 
 			</Routes>
+      <Footer />
 		</>
 	);
 };

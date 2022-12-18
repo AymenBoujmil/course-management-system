@@ -1,137 +1,87 @@
 {
-  "users": [
-    {
-      "firstname": "name 1",
-      "lastname": "first name 1",
-      "nickname": "",
-      "birthday": "7/18/2000",
-      "gender": "male",
-      "email": "email1@gmail.com",
-      "password": "123",
-      "role": "teacher"
-    },
-    {
-      "firstname": "name 2",
-      "lastname": "first name 2",
-      "nickname": "",
-      "birthday": "7/18/2000",
-      "gender": "male",
-      "email": "email2@gmail.com",
-      "password": "123",
-      "role": "teacher"
-    },
-    {
-      "firstname": "name 3",
-      "lastname": "first name 3",
-      "nickname": "",
-      "birthday": "7/18/2000",
-      "gender": "male",
-      "email": "email3@gmail.com",
-      "password": "123",
-      "role": "teacher"
-    },
-    {
-      "firstname": "name 2",
-      "lastname": "first name 2",
-      "nickname": "",
-      "birthday": "7/17/1999",
-      "gender": "female",
-      "email": "email2@gmail.com",
-      "password": "123",
-      "role": "student"
-    }
-  ],
-  "jwt": [
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdG5hbWUiOiJuYW1lIDEiLCJsYXN0bmFtZSI6ImZpcnN0IG5hbWUgMSIsIm5pY2tuYW1lIjoiIiwiYmlydGhkYXkiOiI3LzE4LzIwMDAiLCJnZW5kZXIiOiJtYWxlIiwiZW1haWwiOiJlbWFpbDFAZ21haWwuY29tIiwicGFzc3dvcmQiOiIxMjMiLCJyb2xlIjoidGVhY2hlciJ9.TbJgo6liNHqTsIUd_umg6PuAMlfyxUvxx9hxzPDUadU",
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdG5hbWUiOiJuYW1lIDIiLCJsYXN0bmFtZSI6ImZpcnN0IG5hbWUgMiIsIm5pY2tuYW1lIjoiIiwiYmlydGhkYXkiOiI3LzE3LzE5OTkiLCJnZW5kZXIiOiJmZW1hbGUiLCJlbWFpbCI6ImVtYWlsMkBnbWFpbC5jb20iLCJwYXNzd29yZCI6IjEyMyIsInJvbGUiOiJzdHVkZW50In0.i8YVwUVCB8nFfpa7RgJOO1I9q4v7W9Q_cBUJKXzildo"
-  ],
-  "courses": [
-    {
-      "name": "thermodynamics",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      "category": "Physics",
-      "subject": "thermodynamics",
-      "startTime": 10,
-      "endTime": 13,
-      "numberOfStudents": 5
-    },
-    {
-      "name": "thermodynamics 2",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      "category": "Physics",
-      "subject": "thermodynamics 2",
-      "startTime": 13,
-      "endTime": 16,
-      "numberOfStudents": 7
-    },
-    {
-      "name": "algebre",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      "category": "Maths",
-      "subject": "algebre",
-      "startTime": 11,
-      "endTime": 14,
-      "numberOfStudents": 6
-    },
-    {
-      "id": "423d61df-f9d6-4a7a-ae57-c767356e6cbf",
-      "name": "szfdsf",
-      "description": "fdfsdf",
-      "category": "",
-      "subject": "dqDQqqf",
-      "startTime": 17,
-      "endTime": 18,
-      "numberOfStudents": 3
-    },
-    {
-      "id": "b9781fb1-cd77-4d74-8181-8616702168ce",
-      "name": "qf",
-      "description": "dfdq",
-      "category": "Pysics",
-      "subject": "qfqf",
-      "startTime": 19,
-      "endTime": 14,
-      "numberOfStudents": 2
-    },
-    {
-      "id": "26de2e2a-4447-494d-b9ca-529d50012067",
-      "name": "qf",
-      "description": "dfdq",
-      "category": "Pysics",
-      "subject": "qfqf",
-      "startTime": 19,
-      "endTime": 14,
-      "numberOfStudents": 2
-    },
-    {
-      "id": "c4a0517e-4371-4063-b9e3-6ec7270b5dd7",
-      "name": "qf",
-      "description": "dfdq",
-      "category": "Pysics",
-      "subject": "qfqf",
-      "startTime": 19,
-      "endTime": 14,
-      "numberOfStudents": 2
-    },
-    {
-      "id": "df3a279a-daef-4b0b-98b6-c28b27e33ed2",
-      "name": "dfdf",
-      "description": "sqfqsf",
-      "category": "Pysics",
-      "subject": "fqfd",
-      "startTime": 17,
-      "endTime": 20,
-      "numberOfStudents": 3
-    },
-    {
-      "id": "70e2695d-a4f8-4d45-a614-729a2020860a",
-      "name": "sfsf",
-      "description": "dqfqdf",
-      "category": "Maths",
-      "subject": "dfdf",
-      "startTime": 17,
-      "endTime": 19,
-      "numberOfStudents": 3
-    }
-  ]
+	"users": [
+		{
+			"firstname": "name 1",
+			"lastname": "first name 1",
+			"nickname": "",
+			"birthday": "7/18/2000",
+			"gender": "male",
+			"email": "email1@gmail.com",
+			"password": "123",
+			"role": "teacher"
+		},
+		{
+			"firstname": "name 2",
+			"lastname": "first name 2",
+			"nickname": "",
+			"birthday": "7/18/2000",
+			"gender": "male",
+			"email": "email2@gmail.com",
+			"password": "123",
+			"role": "teacher"
+		},
+		{
+			"firstname": "name 3",
+			"lastname": "first name 3",
+			"nickname": "",
+			"birthday": "7/18/2000",
+			"gender": "male",
+			"email": "email3@gmail.com",
+			"password": "123",
+			"role": "teacher"
+		},
+		{
+			"firstname": "name 2",
+			"lastname": "first name 2",
+			"nickname": "",
+			"birthday": "7/17/1999",
+			"gender": "female",
+			"email": "email2@gmail.com",
+			"password": "123",
+			"role": "student"
+		}
+	],
+	"jwt": [
+		"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdG5hbWUiOiJuYW1lIDEiLCJsYXN0bmFtZSI6ImZpcnN0IG5hbWUgMSIsIm5pY2tuYW1lIjoiIiwiYmlydGhkYXkiOiI3LzE4LzIwMDAiLCJnZW5kZXIiOiJtYWxlIiwiZW1haWwiOiJlbWFpbDFAZ21haWwuY29tIiwicGFzc3dvcmQiOiIxMjMiLCJyb2xlIjoidGVhY2hlciJ9.TbJgo6liNHqTsIUd_umg6PuAMlfyxUvxx9hxzPDUadU",
+		"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdG5hbWUiOiJuYW1lIDIiLCJsYXN0bmFtZSI6ImZpcnN0IG5hbWUgMiIsIm5pY2tuYW1lIjoiIiwiYmlydGhkYXkiOiI3LzE3LzE5OTkiLCJnZW5kZXIiOiJmZW1hbGUiLCJlbWFpbCI6ImVtYWlsMkBnbWFpbC5jb20iLCJwYXNzd29yZCI6IjEyMyIsInJvbGUiOiJzdHVkZW50In0.i8YVwUVCB8nFfpa7RgJOO1I9q4v7W9Q_cBUJKXzildo"
+	],
+	"courses": [
+		{
+			"name": "thermodynamics",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+			"category": "Physics",
+			"subject": "thermodynamics",
+			"startTime": 10,
+			"endTime": 13,
+			"numberOfStudents": 5
+		},
+		{
+			"name": "thermodynamics 2",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+			"category": "Physics",
+			"subject": "thermodynamics 2",
+			"startTime": 13,
+			"endTime": 16,
+			"numberOfStudents": 7
+		},
+		{
+			"name": "algebre",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+			"category": "Maths",
+			"subject": "algebre",
+			"startTime": 11,
+			"endTime": 14,
+			"numberOfStudents": 6
+		},
+		{
+			"id": "70e2695d-a4f8-4d45-a614-729a2020860a",
+			"name": "sfsf",
+			"description": "dqfqdf",
+			"category": "Maths",
+			"subject": "dfdf",
+			"startTime": 17,
+			"endTime": 19,
+			"numberOfStudents": 3
+		}
+	]
 }

@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
-import { ICourse } from '../utilities/models/ICourse';
+import { ICourse } from '../../utilities/models/ICourse';
 import { useNavigate } from 'react-router-dom';
-import api from '../api/courses'
+import api from '../../api/courses'
 import { v4 as uuidv4 } from 'uuid';
-import { ICourses } from '../utilities/models/ICourses';
-import courses from '../api/courses';
+import { ICourses } from '../../utilities/models/ICourses';
+import courses from '../../api/courses';
 
 interface ISetCourses{
     changeCourses: (Course: ICourse) => void

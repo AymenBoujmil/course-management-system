@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { ICourses } from '../utilities/models/ICourses';
+import { ICourses } from '../../utilities/models/ICourses';
 import { Row, Col, Container, Button } from 'react-bootstrap';
-import '../assets/styles/courseList.css';
-import Filter from '../components/filter/Filter';
-import Course from '../components/course/Course';
-import { ICourse } from '../utilities/models/ICourse';
-import { IFilter } from '../utilities/models/IFilter';
+import '../../assets/styles/courseList.css';
+import Filter from '../../components/filter/Filter';
+import Course from '../../components/course/Course';
+import { ICourse } from '../../utilities/models/ICourse';
+import { IFilter } from '../../utilities/models/IFilter';
 
 import { useNavigate } from 'react-router-dom';
 
