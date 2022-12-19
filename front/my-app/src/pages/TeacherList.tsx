@@ -10,6 +10,7 @@ const TeacherList: FC<IUsers> = ({ users }: IUsers) => {
 const isLoggedIn = window.localStorage.getItem("isLoggedIn")
   const navigate = useNavigate()
 
+	// here we only render the teachers list 
 	useEffect(() => {
 		console.log(users.filter((user: IUser) => user.role === 'teacher'));
 	}, [users]);

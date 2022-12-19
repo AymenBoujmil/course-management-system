@@ -25,6 +25,7 @@ const AddCourse: React.FC<ISetCourses> = ({ changeCourses }: ISetCourses) => {
 		endTime: 8,
 		numberOfStudents: 0,
 	};
+	
 	const [course, setCourse] = useState<ICourse>(initialCourse);
 	const handleChange = (e: any) => {
 		const { name, value } = e.target;

@@ -12,18 +12,23 @@ const Filter: FC<IFilterFunc> = ({ handleFilter }: IFilterFunc) => {
 	const [name, setName] = useState<string>('');
 	const [time, setTime] = useState<number>(8);
 
+	//here we change the value of category if the user checks a category in the filter
 	const handleCategory = (e: any) => {
 		setCategory(e.target.value);
-		console.log(e.target.value);
 	};
+
+	//here we changes the value of name if the user has entered a name in the input
 	const handleSubject = (e: any) => {
 		setName(e.target.value);
 	};
+
+	// here we changes the value of time if the user has chosen a time and we only took the hours part
 	const handleTime = (e: any) => {
 		setTime(parseInt(e.target.value[0] + e.target.value[1]));
-
-		console.log(parseInt(e.target.value[0] + e.target.value[1]));
 	};
+
+	// if the user sumbitted the filter we will send it to courses list where we will show the filtred list of courses 
+	
 	const handleSubmit = () => {
 		const filter: IFilter = {
 			category: category,

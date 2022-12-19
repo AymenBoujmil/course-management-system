@@ -18,13 +18,21 @@ const CourseList: React.FC<ICourses> = ({ courses }: ICourses) => {
 	
 	const initialFilter: IFilter = { category: 'All', name: '', time: 8 };
 	const [filter, setFilter] = useState<IFilter>(initialFilter);
+	
+	
 	const handleFilter = (filter: IFilter) => {
 		setFilter(filter);
 	};
+
+	// here we change the value of filtred courses if the there is a change in the courses table
 	useEffect(() => {
 		setFiltred(courses);
 		console.log(courses)
 	}, [courses]);
+
+	// here we check the value of the filter entered so if the user selected all categories then we will apply the filter on the name and/or the time
+	// else we will do a filter also in category and/or (time,name)
+
 	useEffect(() => {
 		
 		if (filter.category === "All" ){
@@ -53,6 +61,9 @@ const CourseList: React.FC<ICourses> = ({ courses }: ICourses) => {
 		} 
 		
 	}, [filter]);
+	 
+	//here we see if the there is a user connected if not we send him to the login page 
+
 	if (isLoggedIn !== 'true') return <Navigate replace to="/sigin" />
 	else
 	return (

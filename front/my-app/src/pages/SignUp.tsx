@@ -44,7 +44,8 @@ const SignUp: FC = () => {
 		}
 	}
 
-	
+	// this functions are for changing the value of user data
+
 	const changeEmail = (event: any) => {
 		setEmail(event.target.value);
 	};
