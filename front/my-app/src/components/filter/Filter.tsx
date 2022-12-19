@@ -9,7 +9,7 @@ interface IFilterFunc {
 
 const Filter: FC<IFilterFunc> = ({ handleFilter }: IFilterFunc) => {
 	const [category, setCategory] = useState<string>('All');
-	const [subject, setSubject] = useState<string>('');
+	const [name, setName] = useState<string>('');
 	const [time, setTime] = useState<number>(8);
 
 	const handleCategory = (e: any) => {
@@ -17,7 +17,7 @@ const Filter: FC<IFilterFunc> = ({ handleFilter }: IFilterFunc) => {
 		console.log(e.target.value);
 	};
 	const handleSubject = (e: any) => {
-		setSubject(e.target.value);
+		setName(e.target.value);
 	};
 	const handleTime = (e: any) => {
 		setTime(parseInt(e.target.value[0] + e.target.value[1]));
@@ -27,11 +27,11 @@ const Filter: FC<IFilterFunc> = ({ handleFilter }: IFilterFunc) => {
 	const handleSubmit = () => {
 		const filter: IFilter = {
 			category: category,
-			subject: subject,
+			name: name,
 			time: time,
 		};
 		filter.category = category;
-		filter.subject = subject;
+		filter.name = name;
 		filter.time = time;
 		handleFilter(filter);
 	};
@@ -84,12 +84,12 @@ const Filter: FC<IFilterFunc> = ({ handleFilter }: IFilterFunc) => {
 					</div>
 				</div>
 				<div className='category'>
-					<h3>Subject</h3>
+					<h3>Name</h3>
 					<InputGroup size='sm' className='mb-3'>
 						<Form.Control
 							onChange={handleSubject}
 							className='mt-3'
-							value={subject}
+							value={name}
 							aria-label='Small'
 							aria-describedby='inputGroup-sizing-sm'
 						/>

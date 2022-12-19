@@ -16,7 +16,7 @@ const CourseList: React.FC<ICourses> = ({ courses }: ICourses) => {
 	const isLoggedIn = window.localStorage.getItem('isLoggedIn');
 	const roleUser = window.localStorage.getItem('role');
 	
-	const initialFilter: IFilter = { category: 'All', subject: '', time: 8 };
+	const initialFilter: IFilter = { category: 'All', name: '', time: 8 };
 	const [filter, setFilter] = useState<IFilter>(initialFilter);
 	const handleFilter = (filter: IFilter) => {
 		setFilter(filter);
@@ -31,7 +31,7 @@ const CourseList: React.FC<ICourses> = ({ courses }: ICourses) => {
 			setFiltred(
 				courses
 					.filter((course) => {
-						return course.subject.includes(filter.subject);
+						return course.name.includes(filter.name);
 					})
 					.filter((course) => {
 						return filter.time < course.startTime;
@@ -44,7 +44,7 @@ const CourseList: React.FC<ICourses> = ({ courses }: ICourses) => {
 						return course.category.localeCompare(filter.category) === 0;
 					})
 					.filter((course) => {
-						return course.subject.includes(filter.subject);
+						return course.name.includes(filter.name);
 					})
 					.filter((course) => {
 						return filter.time < course.startTime;

@@ -1,5 +1,5 @@
 export interface IFilter{
     category : string,
-    subject : string,
+    name : string,
     time : number,
 }
