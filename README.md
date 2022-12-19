@@ -118,6 +118,10 @@ He can also see the courses
  
 ![Opera Instantané_2022-12-18_224759_localhost](https://user-images.githubusercontent.com/56639521/208321210-b227df97-51d4-4e58-9de6-b73298af0481.png)
 
+Also the teacher must enter the start time between 8AM and 4PM and the end time between start time and 6PM.
+![image](https://user-images.githubusercontent.com/56639521/208404377-3b861641-acaf-41f7-b109-bacc505e531b.png)
+
+
 And after submitting we notice that the new course is added to the list of courses
 ![Opera Instantané_2022-12-18_224937_localhost](https://user-images.githubusercontent.com/56639521/208321243-51da65aa-0e02-473e-8d18-064168d14677.png)
 
