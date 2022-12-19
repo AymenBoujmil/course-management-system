@@ -113,7 +113,7 @@ He can also see the courses
  At the left, we have a filter that the user can use to filter by category, subject and start time
  ![Opera Instantané_2022-12-18_224456_localhost](https://user-images.githubusercontent.com/56639521/208321122-327ff4b1-a44d-4f71-a966-726e4a7840e1.png)
  
- Also we see at the bottom right add course button that only the instructor can see and he can create a new course and if the student went to the url of creating a new course he will be redirected to 404 not found page.
+ Also we see at the bottom right add course button that only the instructor can see and he can create a new course and if the student went to the url of creating a new course he will be redirected to All courses page.
  
  
 ![Opera Instantané_2022-12-18_224759_localhost](https://user-images.githubusercontent.com/56639521/208321210-b227df97-51d4-4e58-9de6-b73298af0481.png)
