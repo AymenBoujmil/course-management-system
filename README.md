@@ -146,7 +146,15 @@ npx json-server --watch src/data/db.json --port -3006
 As it is a front end project I used Vercel to deploy my application and in order to do that 
 I replaced json server with a simple json file and uploading its data in a table.
 
+To login as a teacher : (mail : email1@gmail.com, password: 123)
+
+To login as a student : (mail : email4@gmail.com, password: 123)
+
 https://course-management-system-5yhs.vercel.app
+
+## Remark 
+This website is responsive too
+
 
 
 
