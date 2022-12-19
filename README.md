@@ -113,10 +113,14 @@ He can also see the courses
  At the left, we have a filter that the user can use to filter by category, subject and start time
  ![Opera Instantané_2022-12-18_224456_localhost](https://user-images.githubusercontent.com/56639521/208321122-327ff4b1-a44d-4f71-a966-726e4a7840e1.png)
  
- Also we see at the bottom right add course button that only the instructor can see and he can create a new course and if the student went to the url of creating a new course he will be redirected to 404 not found page.
+ Also we see at the bottom right add course button that only the instructor can see and he can create a new course and if the student went to the url of creating a new course he will be redirected to All courses page.
  
  
 ![Opera Instantané_2022-12-18_224759_localhost](https://user-images.githubusercontent.com/56639521/208321210-b227df97-51d4-4e58-9de6-b73298af0481.png)
+
+Also the teacher must enter the start time between 8AM and 4PM and the end time between start time and 6PM.
+![image](https://user-images.githubusercontent.com/56639521/208404377-3b861641-acaf-41f7-b109-bacc505e531b.png)
+
 
 And after submitting we notice that the new course is added to the list of courses
 ![Opera Instantané_2022-12-18_224937_localhost](https://user-images.githubusercontent.com/56639521/208321243-51da65aa-0e02-473e-8d18-064168d14677.png)
