@@ -230,7 +230,7 @@ const SignUp: FC = () => {
 										<div className='d-grid'>
 											<Button variant='danger'
 											 type='submit'>
-												Login
+												Sign Up
 											</Button>
 										</div>
 									</Form>

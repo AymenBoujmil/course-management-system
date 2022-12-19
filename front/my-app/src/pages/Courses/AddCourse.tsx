@@ -13,6 +13,7 @@ interface ISetCourses {
 const AddCourse: React.FC<ISetCourses> = ({ changeCourses }: ISetCourses) => {
 	const isLoggedIn = window.localStorage.getItem('isLoggedIn');
 	const roleUser = window.localStorage.getItem('role');
+	const [minutesStart, setMinuteStart] = useState<String>("00")
 	const navigate = useNavigate();
 	
 	const initialCourse = {
@@ -28,6 +29,7 @@ const AddCourse: React.FC<ISetCourses> = ({ changeCourses }: ISetCourses) => {
 	const handleChange = (e: any) => {
 		const { name, value } = e.target;
 		if (name === 'endTime' || name === 'startTime') {
+			setMinuteStart(value[3]+value[4])
 			const valueStartEnd = parseInt(value[0] + value[1]);
 			setCourse({ ...course, [name]: valueStartEnd });
 		} else if (name === 'numberOfStudents') {
@@ -118,6 +120,8 @@ const AddCourse: React.FC<ISetCourses> = ({ changeCourses }: ISetCourses) => {
 										onChange={handleChange}
 										name='startTime'
 										type='time'
+										min="08:00"
+										max="17:00"
 										className='text-center'
 										aria-label='Small'
 										aria-describedby='inputGroup-sizing-sm'
@@ -134,6 +138,8 @@ const AddCourse: React.FC<ISetCourses> = ({ changeCourses }: ISetCourses) => {
 										required
 										onChange={handleChange}
 										type='time'
+										min={course.startTime +":"+minutesStart}
+										max="18:00"
 										name='endTime'
 										className=' text-center'
 										aria-label='Small'
