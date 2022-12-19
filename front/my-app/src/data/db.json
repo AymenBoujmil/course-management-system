@@ -92,6 +92,16 @@
       "startTime": 9,
       "endTime": 12,
       "numberOfStudents": 15
+    },
+    {
+      "id": "ef479e39-2b45-42bf-8bc6-1ee83c79cc45",
+      "name": "course 2 ",
+      "description": "course 2 ",
+      "category": "Maths",
+      "subject": "course 2 ",
+      "startTime": 17,
+      "endTime": 23,
+      "numberOfStudents": 0
     }
   ]
 }

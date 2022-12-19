@@ -1,19 +1,16 @@
-import React,{useEffect} from 'react';
+import React from 'react';
 import { Button } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 const NotFound: React.FC = () => {
-  //const isLoggedIn = window.localStorage.getItem("isLoggedIn")
+  const isLoggedIn = window.localStorage.getItem("isLoggedIn")
   const navigate = useNavigate()
-//   useEffect(() => {
-//     if (isLoggedIn !== "true"){
-//       navigate('/signin')
-//     }
-//   }, [])
 
 	const handleClick = () => {
 		navigate('/');
 	};
+	if(isLoggedIn !== "true") return <Navigate replace to="/signin"></Navigate>
+	else
 	return (
 		<>
 			<div className='d-flex align-items-center justify-content-center vh-100'>

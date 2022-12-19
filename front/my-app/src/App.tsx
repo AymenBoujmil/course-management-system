@@ -1,73 +1,71 @@
-import React, { FC, useEffect, useState} from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Navbar from './components/navbar/Navbar';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
-import api from "./api/users"
+import api from './api/users';
 import TeacherList from './pages/TeacherList';
 import CourseList from './pages//Courses/CourseList';
 import NotFound from './pages/NotFound';
 import AddCourse from './pages/Courses/AddCourse';
 import { ICourse } from './utilities/models/ICourse';
 import Footer from './components/footer/Footer';
-import data from './data/db.json'
+import data from './data/db.json';
 const App: FC = () => {
+	const isLoggedIn = window.localStorage.getItem('isLoggedIn');
 
-  const isLoggedIn = window.localStorage.getItem("isLoggedIn")
+	const [users, setUsers] = useState<any>(data.users);
+	const [courses, setCourses] = useState<any>(data.courses);
 
-  const [users, setUsers] = useState<any>(data.users)
-  const [courses, setCourses] = useState<any>(data.courses)
+	/** I Used this code to be able to get data from json server*/
 
+	// const retrieveUsers = async() =>{
+	//   const response = await api.get('/users')
+	//   return response
+	// }
+	// const retrieveCourses = async() =>{
+	//   const response = await api.get('/courses')
+	//   return response
+	// }
+	// useEffect(() => {
+	//   const getAllCourses =async () => {
+	//     const allCourses = await retrieveCourses()
+	//     if (allCourses.data) setCourses(allCourses.data)
 
-  /** I Used this code to be able to get data from json server*/
+	//   };
+	//   const getAllUsers = async()=>{
+	//     const allUsers = await retrieveUsers()
+	//     if (allUsers.data) setUsers(allUsers.data)
+	//   };
+	//   getAllUsers();
+	//   getAllCourses();
+	// }, [])
+	useEffect(() => {
+		console.log('11233');
+		console.log(courses);
+	}, [courses]);
 
-  // const retrieveUsers = async() =>{
-  //   const response = await api.get('/users')
-  //   return response
-  // }
-  // const retrieveCourses = async() =>{
-  //   const response = await api.get('/courses')
-  //   return response
-  // }
-  // useEffect(() => {
-  //   const getAllCourses =async () => {
-  //     const allCourses = await retrieveCourses()
-  //     if (allCourses.data) setCourses(allCourses.data)
+	const changeCourses = (course: ICourse) => {
+		setCourses([...courses, course]);
+	};
 
-  //   };
-  //   const getAllUsers = async()=>{
-  //     const allUsers = await retrieveUsers()
-  //     if (allUsers.data) setUsers(allUsers.data)
-  //   };
-  //   getAllUsers();
-  //   getAllCourses();
-  // }, [])
-  useEffect(() => {
-    
-  console.log(courses);
-    
-  }, [courses])
-  
-  const changeCourses = (course:ICourse) => {
-    setCourses([...courses, course ])
-  }
- 
-  
 	return (
 		<>
 			<Navbar />
-			<Routes>  
-				<Route path='/'  element={isLoggedIn?<Home users = {users} />:<Login users = {users} />} />
-				<Route path='/signin'  element={<Login users = {users} />} />
+			<Routes>
+				<Route path='/' element={<Home users={users} />} />
+				<Route path='/signin' element={<Login users={users} />} />
 				<Route path='/signup' element={<SignUp />} />
-        <Route path='/teachers' element={isLoggedIn?<TeacherList users = {users} />:<Login users = {users} />} />
-        <Route path='/courses' element={isLoggedIn?<CourseList courses = {courses} />:<Login users = {users} />} />
-        <Route path='/newcourse'  element={isLoggedIn?<AddCourse  changeCourses = {changeCourses} />:<Login users = {users} />} />
-        <Route path='/*' element={isLoggedIn?<NotFound />:<Login users = {users}  />} />
-
+				<Route path='/teachers' element={<TeacherList users={users} />} />
+				<Route path='/courses' element={<CourseList courses={courses} />} />
+				<Route
+					path='/newcourse'
+					element={<AddCourse changeCourses={changeCourses} />}
+				/>
+				<Route path='/*' element={<NotFound />} />
 			</Routes>
-      <Footer />
+			<Footer />
 		</>
 	);
 };

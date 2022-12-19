@@ -8,12 +8,13 @@ import {
 	Form,
 	Alert,
 } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 import 'react-datepicker/dist/react-datepicker.css';
 import DatePicker from 'react-datepicker';
 
 const SignUp: FC = () => {
 	const navigate = useNavigate();
+	const isLoggedIn = window.localStorage.getItem("isLoggedIn")
 
 	const [error, setError] = useState(false);
 	const [email, setEmail] = useState<string>('');
@@ -42,6 +43,8 @@ const SignUp: FC = () => {
 			setError(true);
 		}
 	}
+
+	
 	const changeEmail = (event: any) => {
 		setEmail(event.target.value);
 	};
@@ -75,7 +78,8 @@ const SignUp: FC = () => {
         navigate("/signin")
     }
 
-	
+	if(isLoggedIn==="true") return <Navigate replace to="/signin" />
+	else
 	return (
 		<Container>
 			<Row className='vh-100 d-flex justify-content-center align-items-center'>

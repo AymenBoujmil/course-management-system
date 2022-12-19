@@ -4,21 +4,17 @@ import '../assets/styles/teacherList.css';
 import { IUser } from '../utilities/models/IUser';
 import { IUsers } from '../utilities/models/IUsers';
 import Teacher from '../components/teacher/Teacher';
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 const TeacherList: FC<IUsers> = ({ users }: IUsers) => {
-//   const isLoggedIn = window.localStorage.getItem("isLoggedIn")
+const isLoggedIn = window.localStorage.getItem("isLoggedIn")
   const navigate = useNavigate()
-//   useEffect(() => {
-//     if (isLoggedIn !== "true"){
-//       navigate('/signin')
-//     }
-//   }, [])
+
 	useEffect(() => {
-		console.log(users);
 		console.log(users.filter((user: IUser) => user.role === 'teacher'));
 	}, [users]);
-
+	if (isLoggedIn !== "true") return <Navigate replace to="/signin" />
+	else
 	return (
 		<>
 			<Container>

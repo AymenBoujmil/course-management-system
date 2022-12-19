@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import { ICourse } from '../../utilities/models/ICourse';
-import { useNavigate } from 'react-router-dom';
-import api from '../../api/courses';
-import { v4 as uuidv4 } from 'uuid';
+import { Navigate, useNavigate } from 'react-router-dom';
+// import api from '../../api/courses';
+// import { v4 as uuidv4 } from 'uuid';
 
 
 interface ISetCourses {
@@ -11,17 +11,10 @@ interface ISetCourses {
 }
 
 const AddCourse: React.FC<ISetCourses> = ({ changeCourses }: ISetCourses) => {
-	// const isLoggedIn = window.localStorage.getItem('isLoggedIn');
+	const isLoggedIn = window.localStorage.getItem('isLoggedIn');
 	const roleUser = window.localStorage.getItem('role');
 	const navigate = useNavigate();
-	useEffect(() => {
-		// if (isLoggedIn !== 'true') {
-		// 	navigate('/signin');
-		// }
-		if (roleUser !== 'teacher') {
-			navigate('/courses');
-		}
-	}, []);
+	
 	const initialCourse = {
 		name: '',
 		description: '',
@@ -60,6 +53,9 @@ const AddCourse: React.FC<ISetCourses> = ({ changeCourses }: ISetCourses) => {
 		// navigate('/courses');
 	};
 
+	if (isLoggedIn !== 'true') return <Navigate replace to="/signin" />
+	if (roleUser !== "teacher") return <Navigate replace to="/courses" />
+	else
 	return (
 		<>
 			<Container>

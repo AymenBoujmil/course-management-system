@@ -1,30 +1,46 @@
 import React, { FC, useState } from 'react';
-import { Col, Button, Row, Container, Card, Form, Alert } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import {
+	Col,
+	Button,
+	Row,
+	Container,
+	Card,
+	Form,
+	Alert,
+} from 'react-bootstrap';
+import { useNavigate, Navigate } from 'react-router-dom';
 import { IUsers } from '../utilities/models/IUsers';
-import image from '../assets/images/img1.webp'
+import image from '../assets/images/img1.webp';
 
-
-const Login: FC<IUsers> = ({users}:IUsers) => {
+const Login: FC<IUsers> = ({ users }: IUsers) => {
+	const isLoggedIn = window.localStorage.getItem('isLoggedIn');
 	const navigate = useNavigate();
-	const [error, setError] = useState(false)
-	function handleSubmit(event: any) {
-		event.preventDefault();
-		const exist = users.filter((user) =>{ return user.email.localeCompare(email) === 0})
-		console.log(exist.length)
-		if (exist.length > 0){
-			if ( exist[0].password === pwd ){
-				window.localStorage.setItem("user",JSON.stringify(exist[0]))
-				window.localStorage.setItem("role",exist[0].role)
-				window.localStorage.setItem("isLoggedIn","true")
+	const [error, setError] = useState(false);
 
-				navigate('/')
-			}
-		}
-		setError(true);
-		}
+	
 	const [email, setEmail] = useState<string>('');
 	const [pwd, setPwd] = useState<string>('');
+	
+	
+	function handleSubmit(event: any) {
+		event.preventDefault();
+		const exist = users.filter((user) => {
+			return user.email.localeCompare(email) === 0;
+		});
+		console.log(exist.length);
+		if (exist.length > 0) {
+			if (exist[0].password === pwd) {
+				window.localStorage.setItem('user', JSON.stringify(exist[0]));
+				window.localStorage.setItem('role', exist[0].role);
+				window.localStorage.setItem('isLoggedIn', 'true');
+				navigate('/');
+			}
+		} else {
+			setError(true);
+		}
+	}
+	
+
 	const changeEmail = (event: any) => {
 		setEmail(event.target.value);
 	};
@@ -32,18 +48,19 @@ const Login: FC<IUsers> = ({users}:IUsers) => {
 		setPwd(event.target.value);
 	};
 
-  const handleSignup = (e:any) =>{
-    e.preventDefault();
-    navigate("/signup")
-}
-	
+	const handleSignup = (e: any) => {
+		e.preventDefault();
+		navigate('/signup');
+	};
+	if(isLoggedIn==="true") return <Navigate replace to="/"/>
+	else
 	return (
 		<Container>
 			{error ? (
-					<Alert key='danger' variant='danger'>
-						Please Verify your data
-					</Alert>
-				) : null}
+				<Alert key='danger' variant='danger'>
+					Please Verify your data
+				</Alert>
+			) : null}
 			<Row className='vh-100 d-flex justify-content-center align-items-center'>
 				<Col md={10} lg={8} xs={12}>
 					{/* <div className="border border-3 border-primary"></div> */}
@@ -101,7 +118,10 @@ const Login: FC<IUsers> = ({users}:IUsers) => {
 											<div className='mt-3'>
 												<p className='mb-0  text-center'>
 													Don't have an account?{' '}
-													<a href="{''}" onClick={handleSignup} className='text-danger fw-bold'>
+													<a
+														href="{''}"
+														onClick={handleSignup}
+														className='text-danger fw-bold'>
 														Sign Up
 													</a>
 												</p>

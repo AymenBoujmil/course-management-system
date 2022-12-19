@@ -7,19 +7,15 @@ import Course from '../../components/course/Course';
 import { ICourse } from '../../utilities/models/ICourse';
 import { IFilter } from '../../utilities/models/IFilter';
 
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 const CourseList: React.FC<ICourses> = ({ courses }: ICourses) => {
 	const [filtred, setFiltred] = useState(courses);
 	const navigate = useNavigate();
 
-	//const isLoggedIn = window.localStorage.getItem('isLoggedIn');
+	const isLoggedIn = window.localStorage.getItem('isLoggedIn');
 	const roleUser = window.localStorage.getItem('role');
-	// useEffect(() => {
-	// 	if (isLoggedIn !== 'true') {
-	// 		navigate('/signin');
-	// 	}
-	// }, []);
+	
 	const initialFilter: IFilter = { category: 'All', subject: '', time: 8 };
 	const [filter, setFilter] = useState<IFilter>(initialFilter);
 	const handleFilter = (filter: IFilter) => {
@@ -57,7 +53,8 @@ const CourseList: React.FC<ICourses> = ({ courses }: ICourses) => {
 		} 
 		
 	}, [filter]);
-
+	if (isLoggedIn !== 'true') return <Navigate replace to="/sigin" />
+	else
 	return (
 		<>
 			<Container>
