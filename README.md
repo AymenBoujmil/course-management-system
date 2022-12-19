@@ -157,7 +157,7 @@ To login as a student : (mail : email4@gmail.com, password: 123)
 https://course-management-system-5yhs.vercel.app
 
 ## Remark 
-This website is responsive too
+This website is responsive too ( A good user experience in the mobile too)
 
 
 
