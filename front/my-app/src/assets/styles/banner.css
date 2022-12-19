@@ -13,13 +13,13 @@
 }
 
 .banner-wrap.banner-wrap-2 {
-	height: 580px;
+	height: 600px;
 }
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
     .banner-wrap.banner-wrap-2 {
-        height: 400px;
+        height: 600px;
     }
-}
+} */
 /* .banner-wrap.banner-wrap-2 .slider-text {
 	height: 300px;
 } */

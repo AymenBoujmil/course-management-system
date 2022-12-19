@@ -12,6 +12,7 @@ import AddCourse from './pages/Courses/AddCourse';
 import { ICourse } from './utilities/models/ICourse';
 import Footer from './components/footer/Footer';
 import data from './data/db.json';
+import ScrollToTop from './components/ScrollToTop';
 const App: FC = () => {
 	const isLoggedIn = window.localStorage.getItem('isLoggedIn');
 
@@ -53,6 +54,7 @@ const App: FC = () => {
 	return (
 		<>
 			<Navbar />
+			<ScrollToTop />
 			<Routes>
 				<Route path='/' element={<Home users={users} />} />
 				<Route path='/signin' element={<Login users={users} />} />
