@@ -94,7 +94,7 @@ const SignUp: FC = () => {
 						<Card.Body>
 							<div className='mb-3 mt-md-4'>
 								<h2 className='fw-bold mb-2 text-uppercase '>Sign Up</h2>
-									<p className=" mb-5">The signup logic is not implement yet. Please sign in in the signin page!</p> 
+									<p className=" mb-5">The signup logic is not implemented yet. Please sign in in the signin page!</p> 
 								<div className='mb-3'>
 									<Form onSubmit={(e) => handleSubmit(e)}>
 										<Row>
